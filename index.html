@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTECH - As melhores peças para sua máquina</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header" style="display: none;">
+        <h1><i class="fas fa-microchip"></i> GTECH</h1>
+        <p class="tagline">As melhores peças para sua máquina</p>
+        <div class="cart-icon" onclick="showCart()">
+            <i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <!-- Páginas -->
+    <div class="pages-container">
+        <!-- Tela Inicial -->
+        <section id="home-page" class="page active">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-image">
+                        <img src="imagens/pc-gamer.png" alt="PC Gamer">
+                    </div>
+                    <div class="hero-text">
+                        <h1 class="hero-title">GTECH</h1>
+                        <p class="hero-subtitle">★ As melhores peças para sua máquina ★</p>
+                        <button class="hero-button" onclick="showPage('products-page')">
+                            <i class="fas fa-store"></i> ENTRAR NA LOJA
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página de Produtos -->
+        <section id="products-page" class="page">
+            <div class="container">
+                <h2><i class="fas fa-shopping-bag"></i> NOSSOS PRODUTOS</h2>
+                <div class="products-grid">
+                    <!-- Air Cooler Gamer -->
+                    <div class="product-card" onmouseenter="showDescription('air-cooler')" onmouseleave="hideDescription('air-cooler')">
+                        <div class="product-badge">MAIS VENDIDO</div>
+                        <img src="imagens/air-cooler.png" alt="Air Cooler Gamer" class="product-image">
+                        <h3>Air Cooler Gamer Rise Mode G800 RGB</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-text">(128)</span>
+                        </div>
+                        <div class="stock-info">
+                            <i class="fas fa-box"></i> Estoque: 
+                            <span class="stock-quantity" id="stock-air-cooler">15</span> unidades
+                        </div>
+                        <p class="price">R$ 150,90</p>
+                        <p class="old-price">R$ 167,90</p>
+                        <p class="installment">ou 6x de R$ 25,15</p>
+                        <button onclick="addToCart('Air Cooler Gamer Rise Mode G800 RGB', 150.90, 'air-cooler')">
+                            <i class="fas fa-cart-plus"></i> Adicionar
+                        </button>
+                        <div class="product-description" id="desc-air-cooler">
+                            <h4><i class="fas fa-info-circle"></i> Descrição</h4>
+                            <p>Cooler para processador com iluminação RGB, projetado para Intel e AMD. Oferece bom desempenho térmico, operação silenciosa e visual gamer, sendo indicado para manter a CPU refrigerada durante jogos e tarefas intensas.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fonte Notebook -->
+                    <div class="product-card" onmouseenter="showDescription('fonte-notebook')" onmouseleave="hideDescription('fonte-notebook')">
+                        <div class="product-badge">OFERTA</div>
+                        <img src="imagens/fonte-notebook.png" alt="Fonte Carregador De Notebook" class="product-image">
+                        <h3>Fonte Compatível para Notebook Philco 14L – 19V</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="rating-text">(64)</span>
+                        </div>
+                        <div class="stock-info">
+                            <i class="fas fa-box"></i> Estoque: 
+                            <span class="stock-quantity" id="stock-fonte-notebook">8</span> unidades
+                        </div>
+                        <p class="price">R$ 45,21</p>
+                        <p class="old-price">R$ 55,00</p>
+                        <p class="installment">ou 3x de R$ 15,07</p>
+                        <button onclick="addToCart('Fonte Compatível para Notebook Philco 14L – 19V', 45.21, 'fonte-notebook')">
+                            <i class="fas fa-cart-plus"></i> Adicionar
+                        </button>
+                        <div class="product-description" id="desc-fonte-notebook">
+                            <h4><i class="fas fa-info-circle"></i> Descrição</h4>
+                            <p>Fonte bivolt automático compatível com notebooks Philco 14L, com saída 19V, oferecendo carregamento seguro e estável. Ideal como reposição ou fonte reserva, possui design compacto e proteções contra sobrecarga e curto-circuito.</p>
+                        </div>
+                    </div>
+
+                    <!-- Fonte K-Mex -->
+                    <div class="product-card" onmouseenter="showDescription('fonte-kmex')" onmouseleave="hideDescription('fonte-kmex')">
+                        <div class="product-badge">POTÊNCIA</div>
+                        <img src="imagens/fonte-kmex.png" alt="Fonte K-Mex 850W Atx 80" class="product-image">
+                        <h3>Fonte Gamer K-Mex 850W Gaming Master</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-text">(92)</span>
+                        </div>
+                        <div class="stock-info">
+                            <i class="fas fa-box"></i> Estoque: 
+                            <span class="stock-quantity" id="stock-fonte-kmex">3</span> unidades
+                        </div>
+                        <p class="price">R$ 485,90</p>
+                        <p class="old-price">R$ 539,90</p>
+                        <p class="installment">ou 12x de R$ 40,49</p>
+                        <button onclick="addToCart('Fonte Gamer K-Mex 850W Gaming Master', 485.90, 'fonte-kmex')">
+                            <i class="fas fa-cart-plus"></i> Adicionar
+                        </button>
+                        <div class="product-description" id="desc-fonte-kmex">
+                            <h4><i class="fas fa-info-circle"></i> Descrição</h4>
+                            <p>Fonte ATX com 850W de potência, certificação 80 Plus Bronze e design full modular, garantindo maior eficiência energética e melhor organização dos cabos. Possui PFC ativo, é bivolt automático e conta com ventoinha silenciosa de 120 mm, ideal para PCs gamers e setups de alto desempenho.</p>
+                        </div>
+                    </div>
+
+                    <!-- Water Cooler -->
+                    <div class="product-card" onmouseenter="showDescription('water-cooler')" onmouseleave="hideDescription('water-cooler')">
+                        <div class="product-badge">TECNOLOGIA</div>
+                        <img src="imagens/water-cooler.png" alt="Water Cooler Rise Mode" class="product-image">
+                        <h3>Water Cooler Rise Mode Aura Ice Black ARGB 120mm</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-text">(201)</span>
+                        </div>
+                        <div class="stock-info">
+                            <i class="fas fa-box"></i> Estoque: 
+                            <span class="stock-quantity" id="stock-water-cooler">22</span> unidades
+                        </div>
+                        <p class="price">R$ 245,90</p>
+                        <p class="old-price">R$ 289,90</p>
+                        <p class="installment">ou 8x de R$ 30,74</p>
+                        <button onclick="addToCart('Water Cooler Rise Mode Aura Ice Black ARGB 120mm', 245.90, 'water-cooler')">
+                            <i class="fas fa-cart-plus"></i> Adicionar
+                        </button>
+                        <div class="product-description" id="desc-water-cooler">
+                            <h4><i class="fas fa-info-circle"></i> Descrição</h4>
+                            <p>Sistema de refrigeração líquida de 120 mm com iluminação ARGB, compatível com processadores Intel e AMD. Proporciona excelente dissipação de calor, funcionamento silencioso e design moderno para setups gamers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navigation">
+                    <button onclick="showPage('home-page')">
+                        <i class="fas fa-arrow-left"></i> VOLTAR
+                    </button>
+                    <button onclick="goToCart()">
+                        VER CARRINHO <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página do Carrinho -->
+        <section id="cart-page" class="page">
+            <div class="container">
+                <h2><i class="fas fa-shopping-cart"></i> SEU CARRINHO</h2>
+                
+                <!-- Cupom de desconto -->
+                <div class="coupon-section">
+                    <div class="coupon-input">
+                        <i class="fas fa-tag"></i>
+                        <input type="text" id="coupon-code" placeholder="Digite seu cupom de desconto">
+                        <button onclick="applyCoupon()">APLICAR</button>
+                    </div>
+                    <div class="coupon-message" id="coupon-message"></div>
+                </div>
+                
+                <div id="cart-items">
+                    <div style="text-align: center; padding: 40px;">
+                        <i class="fas fa-shopping-cart" style="font-size: 3rem; color: #ccc; margin-bottom: 20px;"></i>
+                        <h3 style="color: #666;">Seu carrinho está vazio</h3>
+                    </div>
+                </div>
+                
+                <div class="cart-summary">
+                    <div class="summary-item">
+                        <span>Subtotal:</span>
+                        <span>R$ <span id="subtotal-price">0,00</span></span>
+                    </div>
+                    <div class="summary-item discount-item" id="discount-section" style="display: none;">
+                        <span>Desconto (Cupom):</span>
+                        <span>- R$ <span id="discount-amount">0,00</span></span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Frete:</span>
+                        <span>R$ <span id="shipping-price">0,00</span></span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total:</span>
+                        <span>R$ <span id="total-price">0,00</span></span>
+                    </div>
+                </div>
+
+                <div class="navigation">
+                    <button onclick="showPage('products-page')">
+                        <i class="fas fa-arrow-left"></i> CONTINUAR COMPRANDO
+                    </button>
+                    <button onclick="showPage('checkout-page')" id="checkout-btn" disabled>
+                        FINALIZAR COMPRA <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página de Checkout -->
+        <section id="checkout-page" class="page">
+            <div class="container">
+                <h2><i class="fas fa-credit-card"></i> FINALIZAR COMPRA</h2>
+                
+                <div id="checkout-items"></div>
+
+                <form id="checkout-form" class="checkout-form">
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> DADOS DO CLIENTE</h3>
+                        <label>NOME COMPLETO</label>
+                        <input type="text" id="customer-name" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-id-card"></i> DADOS PESSOAIS</h3>
+                        <label>CPF</label>
+                        <input type="text" id="customer-cpf" placeholder="000.000.000-00" required>
+                        
+                        <label>E-MAIL</label>
+                        <input type="email" id="customer-email" placeholder="seu@email.com" required>
+                        
+                        <label>TELEFONE</label>
+                        <input type="tel" id="customer-phone" placeholder="(11) 99999-9999" required>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-map-marker-alt"></i> ENDEREÇO</h3>
+                        <label>CEP</label>
+                        <input type="text" id="customer-cep" placeholder="00000-000" required>
+                        
+                        <label>RUA</label>
+                        <input type="text" id="customer-street" placeholder="Nome da rua" required>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>NÚMERO</label>
+                                <input type="text" id="customer-number" placeholder="123" required>
+                            </div>
+                            <div class="form-group">
+                                <label>COMPLEMENTO</label>
+                                <input type="text" id="customer-complement" placeholder="Apto 101">
+                            </div>
+                        </div>
+                        
+                        <label>CIDADE</label>
+                        <input type="text" id="customer-city" placeholder="Sua cidade" required>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-money-bill-wave"></i> PAGAMENTO</h3>
+                        <label>FORMA DE PAGAMENTO</label>
+                        <select id="payment-method" required>
+                            <option value="">Selecione...</option>
+                            <option value="credit">Cartão de Crédito</option>
+                            <option value="debit">Cartão de Débito</option>
+                            <option value="pix">PIX</option>
+                            <option value="boleto">Boleto</option>
+                        </select>
+                    </div>
+
+                    <div class="navigation">
+                        <button type="button" onclick="showPage('cart-page')">
+                            <i class="fas fa-arrow-left"></i> VOLTAR
+                        </button>
+                        <button type="submit">
+                            <i class="fas fa-lock"></i> CONFIRMAR PEDIDO
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Página de Confirmação -->
+        <section id="confirmation-page" class="page">
+            <div class="container">
+                <div class="confirmation-content">
+                    <div class="confirmation-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    
+                    <h2 class="confirmation-title">PEDIDO CONFIRMADO!</h2>
+                    <h3 class="confirmation-subtitle">Obrigado por comprar na GTECH!</h3>
+                    
+                    <div class="confirmation-message">
+                        <p>Sua compra foi processada com sucesso!</p>
+                        <p><strong>Número do pedido:</strong> <span id="order-number">GTECH-ABC1234</span></p>
+                        <p><strong>Data:</strong> <span id="current-date"></span></p>
+                    </div>
+                    
+                    <div class="order-details">
+                        <h4>RESUMO DO PEDIDO:</h4>
+                        <ul id="confirmation-items"></ul>
+                        <div class="total">
+                            <strong>Total: R$ <span id="confirmation-total">0,00</span></strong>
+                        </div>
+                    </div>
+                    
+                    <button class="confirmation-button" onclick="resetStore()">
+                        <i class="fas fa-store"></i> VOLTAR À LOJA
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Rodapé -->
+    <footer id="main-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Seção Informações -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-microchip"></i> GTECH</h3>
+                    <p class="footer-description">As melhores peças para sua máquina. Tecnologia, qualidade e performance em um só lugar.</p>
+                    <div class="social-links">
+                        <a href="#" onclick="showSocialMessage('Facebook')"><i class="fab fa-facebook"></i></a>
+                        <a href="#" onclick="showSocialMessage('Instagram')"><i class="fab fa-instagram"></i></a>
+                        <a href="#" onclick="showSocialMessage('Twitter')"><i class="fab fa-twitter"></i></a>
+                        <a href="#" onclick="showSocialMessage('YouTube')"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Seção Links Rápidos -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-link"></i> LINKS RÁPIDOS</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showPage('home-page')"><i class="fas fa-home"></i> Início</a></li>
+                        <li><a href="#" onclick="showPage('products-page')"><i class="fas fa-shopping-bag"></i> Produtos</a></li>
+                        <li><a href="#" onclick="showCart()"><i class="fas fa-shopping-cart"></i> Carrinho</a></li>
+                        <li><a href="#" onclick="showContactModal()"><i class="fas fa-headset"></i> Suporte</a></li>
+                    </ul>
+                </div>
+
+                <!-- Seção Informações de Contato -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-address-card"></i> CONTATO</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> (88) 99979-9855</li>
+                        <li><i class="fas fa-envelope"></i> GTECH@gtech.com.br</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP</li>
+                        <li><i class="fas fa-clock"></i> Seg-Sex: 9h-18h</li>
+                    </ul>
+                </div>
+
+                <!-- Seção Newsletter -->
+                <div class="footer-section">
+                    <h3><i class="fas fa-newspaper"></i> NEWSLETTER</h3>
+                    <p class="newsletter-text">Receba ofertas exclusivas e novidades!</p>
+                    <div class="newsletter-form">
+                        <input type="email" id="newsletter-email" placeholder="Seu melhor e-mail">
+                        <button onclick="subscribeNewsletter()"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                    <p class="newsletter-message" id="newsletter-message"></p>
+                </div>
+            </div>
+
+            <!-- Linha divisória -->
+            <div class="footer-divider"></div>
+
+            <!-- Informações de pagamento -->
+            <div class="payment-methods">
+                <h4><i class="fas fa-credit-card"></i> FORMAS DE PAGAMENTO</h4>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+                    <i class="fab fa-cc-amex" title="American Express"></i>
+                    <i class="fab fa-cc-paypal" title="PayPal"></i>
+                    <i class="fas fa-barcode" title="Boleto"></i>
+                    <i class="fas fa-qrcode" title="PIX"></i>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 <strong>GTECH</strong> - Todos os direitos reservados. <span id="current-year"></span></p>
+                <div class="legal-links">
+                    <a href="#" onclick="showTermsModal()">Termos de Uso</a> | 
+                    <a href="#" onclick="showPrivacyModal()">Política de Privacidade</a> | 
+                    <a href="#" onclick="showAboutModal()">Sobre Nós</a>
+                </div>
+            </div>
+
+            <!-- Botão voltar ao topo -->
+            <button class="back-to-top" onclick="scrollToTop()">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Modal de Contato -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeContactModal()">&times;</span>
+            <h2><i class="fas fa-headset"></i> Fale Conosco</h2>
+            <div class="contact-form">
+                <input type="text" placeholder="Seu nome" id="contact-name">
+                <input type="email" placeholder="Seu e-mail" id="contact-email">
+                <textarea placeholder="Sua mensagem" id="contact-message" rows="4"></textarea>
+                <button onclick="sendContactMessage()"><i class="fas fa-paper-plane"></i> Enviar Mensagem</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Termos -->
+    <div id="terms-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeTermsModal()">&times;</span>
+            <h2><i class="fas fa-file-contract"></i> Termos de Uso</h2>
+            <div class="modal-body">
+                <h3>1. Aceitação dos Termos</h3>
+                <p>Ao acessar e usar o site GTECH, você concorda com estes termos de uso.</p>
+                
+                <h3>2. Produtos e Preços</h3>
+                <p>Os preços dos produtos estão sujeitos a alteração sem aviso prévio. As imagens são meramente ilustrativas.</p>
+                
+                <h3>3. Compras e Pagamentos</h3>
+                <p>Aceitamos diversas formas de pagamento. O prazo de entrega varia conforme a localidade.</p>
+                
+                <h3>4. Garantia</h3>
+                <p>Todos os produtos possuem garantia conforme a legislação brasileira.</p>
+                
+                <button onclick="closeTermsModal()" class="modal-button">Entendi</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Privacidade -->
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePrivacyModal()">&times;</span>
+            <h2><i class="fas fa-shield-alt"></i> Política de Privacidade</h2>
+            <div class="modal-body">
+                <h3>1. Coleta de Dados</h3>
+                <p>Coletamos apenas os dados necessários para processar sua compra e melhorar sua experiência.</p>
+                
+                <h3>2. Uso das Informações</h3>
+                <p>Seus dados são usados apenas para processamento de pedidos e comunicação sobre seu pedido.</p>
+                
+                <h3>3. Segurança</h3>
+                <p>Utilizamos criptografia SSL para proteger todas as transações.</p>
+                
+                <h3>4. Cookies</h3>
+                <p>Usamos cookies para melhorar a navegação e personalizar conteúdo.</p>
+                
+                <button onclick="closePrivacyModal()" class="modal-button">Entendi</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sobre Nós -->
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeAboutModal()">&times;</span>
+            <h2><i class="fas fa-info-circle"></i> Sobre a GTECH</h2>
+            <div class="modal-body">
+                <div class="about-content">
+                    <div class="about-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Nossa Missão</h3>
+                    <p>Fornecer as melhores peças de computador com qualidade, preço justo e atendimento excepcional.</p>
+                    
+                    <h3>Nossa História</h3>
+                    <p>Fundada em 2024, a GTECH nasceu da paixão por tecnologia e gaming, com o objetivo de ser referência no mercado de hardware.</p>
+                    
+                    <h3>Nossos Valores</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Qualidade Garantida</li>
+                        <li><i class="fas fa-check"></i> Atendimento Personalizado</li>
+                        <li><i class="fas fa-check"></i> Preços Competitivos</li>
+                        <li><i class="fas fa-check"></i> Entrega Rápida</li>
+                    </ul>
+                    
+                    <button onclick="closeAboutModal()" class="modal-button">Conhecer Mais</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificações -->
+    <div id="notification-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
